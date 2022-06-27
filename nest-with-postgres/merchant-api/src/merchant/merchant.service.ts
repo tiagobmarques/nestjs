@@ -14,6 +14,7 @@ export class MerchantService {
   }
 
   async save(merchant: Merchant): Promise<Merchant> {
+    // merchant.slug = merchant.name.toLowerCase();
     return this.merchantRepository.save(merchant);
   }
 }

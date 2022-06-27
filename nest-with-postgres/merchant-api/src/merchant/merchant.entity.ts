@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Contains, IsEmail, IsNotEmpty, Min } from "class-validator";
 
 @Entity()
 export class Merchant {
@@ -14,6 +15,8 @@ export class Merchant {
   @Column({ name: 'idt_user' })
   userId: string;
 
+  @IsNotEmpty()
+  @Contains('hello')
   @Column({ length: 500, name: 'nam_assumed_name' })
   name: string;
 
